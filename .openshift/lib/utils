@@ -61,7 +61,8 @@ function _setup_server_xml() {
 
 function start_tomcat7() {
    _setup_server_xml
-   sh $dldir/$tcdir/bin/startup.sh 
+   #  Run Tomcat w/ a heap size that fits in 512mb gears.
+   _JAVA_OPTIONS=-Xmx384m sh $dldir/$tcdir/bin/startup.sh
 
 }  #  End of function  start_tomcat7.
 
